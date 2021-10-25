@@ -460,7 +460,7 @@ Code.init = function() {
 
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
-  Code.bindClick('runButton', Code.runJS);
+  Code.bindClick('runButton', ()=>{document.getElementById("UiWorkspace").innerHTML="";Code.runJS()});
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
@@ -469,7 +469,8 @@ Code.init = function() {
     BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
     BlocklyStorage['XML_ERROR'] = MSG['xmlError'];
     Code.bindClick(linkButton,
-        function() {/*BlocklyStorage.link(Code.workspace);*/alert("This is not avilable now");
+        function() {/*BlocklyStorage.link(Code.workspace);*/
+          document.getElementById("UiWorkspace").innerHTML=""
         //navigator.clipboard.writeText(copyText.value);
       });
   } else if (linkButton) {

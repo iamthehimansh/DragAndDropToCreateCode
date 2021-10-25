@@ -6,6 +6,7 @@
   <meta name="google" value="notranslate">
   <title>Editor: </title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="customeblock.css">
   <script src="./storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
@@ -15,6 +16,14 @@
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="code.js"></script>
+  <script src="customeblock.js"></script>
+  
+  <style>
+      #UiWorkspace{
+          border: black solid 2px;
+          height: 90%;
+      }
+  </style>
 </head>
 <body>
   <table width="100%" height="100%">
@@ -55,7 +64,7 @@
                 <img src='../../media/1x1.gif' class="trash icon21">
               </button>
               <button id="linkButton" class="notext" title="...">
-                <img src='../../media/1x1.gif' class="link icon21">
+                <img src='https://freesvg.org/img/1542971200.png' class="link icon21">
               </button>
               <button id="runButton" class="notext primary" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
@@ -68,7 +77,7 @@
     <tr>
       <td height="99%" colspan=2 id="content_area">
       </td>
-      
+      <td style="width: 45%;"><div style="width: 95%;height: 99%;margin: 20px;"><div ><div style="color: red;">Workspace</div></div><div id="UiWorkspace" ></div></div></td>
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
@@ -388,7 +397,16 @@
     <sep></sep>
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-  </xml>
+    <category name="Custom">
+        <block type="bgcolor"></block>
+        <block type="circle"></block>
+        <block type="moveele"></block>
+        <block type="timeout"></block>
+        <block type="setinterval"></block>
+        
+        
+      </category>
+</xml>
 <script>
 	console.log("worked By Himansh")
 </script>
